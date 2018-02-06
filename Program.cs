@@ -10,61 +10,67 @@ namespace FortuneTellerMethods
 
             string fName ="";
             string lName = "";
-            int age=0;
+            int age = 0;
             int bMonth= 0;
             string favColor = "";
+            int numSibs = 0;
+            string evenOrOdd = "";
+            int yearsToRetire = 0;
+            string vacHome = "";
+            string transportation = "";
+            string bankAccount = "";
+
+            //Take user input
+
+            Console.WriteLine("Please enter your first name");
+            fName = Console.ReadLine().ToLower();
+
+            Console.WriteLine("Please enter your last name");
+            lName = Console.ReadLine().ToLower();
+
+            Greet(fName, lName);
+
+            //Console.WriteLine("Please enter your age");
+            //age = int.Parse(Console.ReadLine());
+            Retire(age);
 
 
+            FavColor(favColor);
 
-            //call the methods
+            Console.WriteLine("Now please tell me how many siblings do you have");
+            numSibs = int.Parse(Console.ReadLine());
 
-           FirstName(fName);
-           LastName(lName);
-           Greet(fName, lName);
-           Age(age);
-           FavColor(favColor);
-            
 
         }
-        //Methods
+        
 
         
 
-        public static string FirstName(string fName)
-        {
-            Console.WriteLine("Please enter your first name");
-            fName = Console.ReadLine().ToLower();
-            return fName;
-        }
+       
 
-        public static string LastName(string lName)
-        {
-            Console.WriteLine("Please enter your last name");
-            lName = Console.ReadLine().ToLower();
-            return lName;
-        }
+       
 
-        public static void Greet(string fName, string lName)
+         static void Greet(string fName, string lName)
         {
             
-            Console.WriteLine("Greetings, " + fName + " " + lName + "I will tell you your fortune!");
+            Console.WriteLine("Greetings, " + fName + " " + lName + " I will tell you your fortune!");
         }
 
-        public static int Age(int age)
-        {
-            Console.WriteLine("Please enter your age");
-            age = int.Parse(Console.ReadLine());
-            return age;
-        }
+        //static int Age(int age)
+        //{
+        //    Console.WriteLine("Please enter your age");
+        //    age = int.Parse(Console.ReadLine());
+        //    return age;
+        //}
 
-        public static int BMonth(int bMonth)
+        static int BMonth(int bMonth)
         {
             Console.WriteLine("Please enter the month you were born in from 1= January through 12 = December");
             bMonth = int.Parse(Console.ReadLine());
             return bMonth;
         }
 
-        public static string FavColor(string favColor)
+         static string FavColor(string favColor)
         {
             Console.WriteLine("Please tell me your favorite color of the rainbow from the choices ROYGBIV. If you don't understand the question, please type Help");
             favColor = Console.ReadLine().ToLower();
@@ -75,13 +81,40 @@ namespace FortuneTellerMethods
                 Console.WriteLine();
                 Console.WriteLine("Now, please enter your favorite color");
                 favColor = Console.ReadLine().ToLower();
+                Console.WriteLine("Thanks!");
                 return favColor;
             }
             else if (favColor != "help")
             {
+                Console.WriteLine("That's a good choice.");
                 return favColor;
             }
             else return favColor;
+        }
+
+         static int Retire(int yearsToRetire)
+           {
+            string evenOrOdd = "";
+            int age;
+            Console.WriteLine("Please enter your age");
+               age = int.Parse(Console.ReadLine());
+            Console.WriteLine(age);
+            if (age % 2 == 0)
+            {
+                evenOrOdd = "even";
+                yearsToRetire = 20;
+                Console.WriteLine("You can retire in " + yearsToRetire + " years.");
+                return yearsToRetire;
+                    
+            }
+            else
+            {
+                evenOrOdd = "odd";
+                yearsToRetire = 25;
+                Console.WriteLine("You can retire in " + yearsToRetire + " years.");
+                return yearsToRetire;
+                   
+            }
         }
 
 
