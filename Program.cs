@@ -100,7 +100,10 @@ namespace FortuneTellerMethods
                 Console.WriteLine("Now, please enter your favorite color");
                 favColor = Console.ReadLine().ToLower();
                 Console.WriteLine("Thanks!");
+                Console.WriteLine(favColor);
                 return favColor;
+                
+
             }
             else if (favColor != "help")
             {
@@ -196,7 +199,7 @@ namespace FortuneTellerMethods
         static string Transport(string favColor) //passing in favColor and switching on it, then returning the value assigned to mode to the method call
         {
             string mode = "";
-            Console.WriteLine(favColor);
+         //   Console.WriteLine(favColor);
             switch (favColor)
 
             {
