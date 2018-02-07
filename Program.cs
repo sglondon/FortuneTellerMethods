@@ -35,7 +35,8 @@ namespace FortuneTellerMethods
 
             Retire(age);
 
-
+            Console.WriteLine("Please tell me your favorite color of the rainbow from the choices ROYGBIV. If you don't understand the question, please type Help");
+            favColor = Console.ReadLine().ToLower();
             FavColor(favColor);
 
             Console.WriteLine("Now please tell me how many siblings do you have");
@@ -43,7 +44,9 @@ namespace FortuneTellerMethods
 
             VacHome(numSibs);
 
+            
 
+            Console.WriteLine("You will be traveling by" + Transport(favColor));
 
         }
 
@@ -73,8 +76,7 @@ namespace FortuneTellerMethods
 
         static string FavColor(string favColor)
         {
-            Console.WriteLine("Please tell me your favorite color of the rainbow from the choices ROYGBIV. If you don't understand the question, please type Help");
-            favColor = Console.ReadLine().ToLower();
+            
 
             if (favColor == "help")
             {
@@ -99,7 +101,7 @@ namespace FortuneTellerMethods
             int age;
             Console.WriteLine("Please enter your age");
             age = int.Parse(Console.ReadLine());
-            Console.WriteLine(age);
+          //  Console.WriteLine(age);
             if (age % 2 == 0)
             {
                 evenOrOdd = "even";
@@ -164,12 +166,71 @@ namespace FortuneTellerMethods
                     Console.WriteLine("You'll be vacationing at " + vacAt);
                     break;
             }
-
-
-
-
         }
 
+
+        static string Transport(string favColor) //passing in favColor and switching on it, then returning the value assigned to mode to the method call
+        {
+            string mode = "";
+            Console.WriteLine(favColor);
+            switch (favColor)
+
+            {
+
+                case "red":
+                    mode = "Bus";
+                    Console.WriteLine("You'll be traveling by " + mode);
+                    
+                    return mode;
+                    
+
+
+
+
+
+                case "orange":
+                    mode = "Yugo";
+                    return mode;
+
+
+
+
+                case "yellow":
+                    mode = "Honda Fit";
+                    return mode;
+
+
+
+                case "green":
+                    mode = "Row Boat";
+                    return mode;
+
+
+
+                case "blue":
+                    mode = "Rolls Royce";
+                    return mode;
+
+
+
+                case "indigo":
+                    mode = "Airplane";
+                    return mode;
+
+
+
+                case "violet":
+                    mode = "Horse Drawn Wagon";
+                    return mode;
+
+
+
+                default:  //if the user entered help more than once or left favorite color blank or entered a non roygbiv color, e.g. black
+                    mode = "Squeaky shopping cart";
+                    return mode;
+            }
+
+        }
 
     }
 }
