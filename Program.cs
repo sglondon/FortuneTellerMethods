@@ -6,7 +6,7 @@ namespace FortuneTellerMethods
     {
         static void Main(string[] args)
         {
-            // variables  why aren't these global?
+            // variables  
 
             string fName = "";
             string lName = "";
@@ -18,7 +18,9 @@ namespace FortuneTellerMethods
             int yearsToRetire = 0;
             string vacHome = "";
             string transportation = "";
-            string bankAccount = "";
+            int bankAccount = 0;
+            string vacAt = "";
+            string mode = "";
 
             //Take user input
 
@@ -30,8 +32,8 @@ namespace FortuneTellerMethods
 
             Greet(fName, lName);
 
-            //Console.WriteLine("Please enter your age");
-            //age = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter your age");
+            age = int.Parse(Console.ReadLine());
 
             Retire(age);
 
@@ -44,9 +46,22 @@ namespace FortuneTellerMethods
 
             VacHome(numSibs);
 
+            Console.WriteLine("Please enter the month you were born in from 1= January through 12 = December");
+            bMonth = int.Parse(Console.ReadLine());
+            //    Console.WriteLine(bMonth);
+            BankAcct(bMonth);
+            //
+        //    Console.WriteLine(bankAccount);
+
+            Console.WriteLine();
+            Console.WriteLine("{0} {1} will retire in {2} years with ${3} in the bank, a vacation home in {4} and a {5}.", fName, lName, Retire(age), BankAcct(bMonth), VacHome(numSibs), Transport(favColor));
+
             
 
-            Console.WriteLine("You will be traveling by" + Transport(favColor));
+            MessageOne();
+
+
+            //     Console.WriteLine("You will be traveling by" + Transport(favColor));
 
         }
 
@@ -62,21 +77,21 @@ namespace FortuneTellerMethods
 
         //static int Age(int age)
         //{
-        //    Console.WriteLine("Please enter your age");
-        //    age = int.Parse(Console.ReadLine());
+        //   // Console.WriteLine("Please enter your age");
+        //    //age = int.Parse(Console.ReadLine());
         //    return age;
         //}
 
-        static int BMonth(int bMonth)
-        {
-            Console.WriteLine("Please enter the month you were born in from 1= January through 12 = December");
-            bMonth = int.Parse(Console.ReadLine());
-            return bMonth;
-        }
+        //static int BMonth(int bMonth)
+        //{
+        //    Console.WriteLine("Please enter the month you were born in from 1= January through 12 = December");
+        //    bMonth = int.Parse(Console.ReadLine());
+        //    return bMonth;
+        //}
 
         static string FavColor(string favColor)
         {
-            
+
 
             if (favColor == "help")
             {
@@ -89,7 +104,7 @@ namespace FortuneTellerMethods
             }
             else if (favColor != "help")
             {
-                Console.WriteLine("That's a good choice.");
+         //       Console.WriteLine("That's a good choice.");
                 return favColor;
             }
             else return favColor;
@@ -97,16 +112,17 @@ namespace FortuneTellerMethods
 
         static int Retire(int yearsToRetire)
         {
+            int age = yearsToRetire;
             string evenOrOdd = "";
-            int age;
-            Console.WriteLine("Please enter your age");
-            age = int.Parse(Console.ReadLine());
-          //  Console.WriteLine(age);
+            
+        //    Console.WriteLine("Please enter your age");
+        //    age = int.Parse(Console.ReadLine());
+            //  Console.WriteLine(age);
             if (age % 2 == 0)
             {
                 evenOrOdd = "even";
                 yearsToRetire = 20;
-                Console.WriteLine("You can retire in " + yearsToRetire + " years.");
+            //    Console.WriteLine("You can retire in " + yearsToRetire + " years.");
                 return yearsToRetire;
 
             }
@@ -114,14 +130,16 @@ namespace FortuneTellerMethods
             {
                 evenOrOdd = "odd";
                 yearsToRetire = 25;
-                Console.WriteLine("You can retire in " + yearsToRetire + " years.");
+            //    Console.WriteLine("You can retire in " + yearsToRetire + " years.");
                 return yearsToRetire;
 
             }
         }
-        static void VacHome(int loc)
+
+
+        static string VacHome(int loc)
         {
-            
+
             string vacAt = "";
             int numSibs = loc;
             switch (loc)
@@ -129,42 +147,48 @@ namespace FortuneTellerMethods
             {
                 case 0:
                     vacAt = "Brown's stadium";
-                    Console.WriteLine("You'll be vacationing at " + vacAt);
+                    // Console.WriteLine("You'll be vacationing at " + vacAt);
+                    return vacAt;
                     break;
 
 
                 case 1:
                     vacAt = "Sandusky";
-                    Console.WriteLine("You'll be vacationing at " + vacAt);
+                    //    Console.WriteLine("You'll be vacationing at " + vacAt);
+                    return vacAt;
                     break;
 
                 case 2:
                     vacAt = "Miami Beach";
-                    Console.WriteLine("You'll be vacationing at " + vacAt);
+                    //      Console.WriteLine("You'll be vacationing at " + vacAt);
+                    return vacAt;
                     break;
 
                 case 3:
                     vacAt = "Disney Land";
-                    Console.WriteLine("You'll be vacationing at " + vacAt);
+                    //     Console.WriteLine("You'll be vacationing at " + vacAt);
+                    return vacAt;
                     break;
 
                 default:
-                    
-                    
-                    Console.WriteLine(numSibs);
+
+
+            //        Console.WriteLine(numSibs);
                     if (numSibs < 0)
                     {
                         vacAt = "rest room at Denny's";
-                        
+                        return vacAt;
+
                     }
                     else if (numSibs > 3)
                     {
                         vacAt = "Hilton Head";
-                        
+                        return vacAt;
+
                     }
 
-                    Console.WriteLine("You'll be vacationing at " + vacAt);
-                    break;
+              //      Console.WriteLine("You'll be vacationing at " + vacAt);
+                    return vacAt;
             }
         }
 
@@ -179,10 +203,10 @@ namespace FortuneTellerMethods
 
                 case "red":
                     mode = "Bus";
-                    Console.WriteLine("You'll be traveling by " + mode);
-                    
+             //       Console.WriteLine("You'll be traveling by " + mode);
+
                     return mode;
-                    
+
 
 
 
@@ -231,6 +255,53 @@ namespace FortuneTellerMethods
             }
 
         }
+
+
+            static int BankAcct(int bMonth)
+        {
+
+            int bankAccount;
+
+
+            if ((bMonth > 0) && (bMonth <= 4))
+            {
+                bankAccount = 100000;
+            //        Console.WriteLine(bankAccount);
+                return bankAccount;
+            }
+            else if ((bMonth >= 5) && (bMonth <= 8))
+            {
+                bankAccount = 50000;
+            //      Console.WriteLine(bankAccount);
+                return bankAccount;
+            }
+            else if ((bMonth >= 9) && (bMonth <= 12))
+            {
+                bankAccount = 20000;
+            //       Console.WriteLine(bankAccount);
+                return bankAccount;
+            }
+            else 
+            {
+                bankAccount = 0;
+            //        Console.WriteLine(bankAccount);
+                return bankAccount;
+            }
+            //else
+            //{
+            //    return 0;
+            //}
+
+
+        }
+
+
+        static void MessageOne()
+        {
+            Console.WriteLine("Your fortune is great!");
+        }
+
+
 
     }
 }
