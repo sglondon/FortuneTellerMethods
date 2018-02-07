@@ -8,10 +8,10 @@ namespace FortuneTellerMethods
         {
             // variables  why aren't these global?
 
-            string fName ="";
+            string fName = "";
             string lName = "";
             int age = 0;
-            int bMonth= 0;
+            int bMonth = 0;
             string favColor = "";
             int numSibs = 0;
             string evenOrOdd = "";
@@ -46,14 +46,14 @@ namespace FortuneTellerMethods
 
 
         }
-        
 
-             
-               
 
-         static void Greet(string fName, string lName)
+
+
+
+        static void Greet(string fName, string lName)
         {
-            
+
             Console.WriteLine("Greetings, " + fName + " " + lName + " I will tell you your fortune!");
         }
 
@@ -71,7 +71,7 @@ namespace FortuneTellerMethods
             return bMonth;
         }
 
-         static string FavColor(string favColor)
+        static string FavColor(string favColor)
         {
             Console.WriteLine("Please tell me your favorite color of the rainbow from the choices ROYGBIV. If you don't understand the question, please type Help");
             favColor = Console.ReadLine().ToLower();
@@ -93,12 +93,12 @@ namespace FortuneTellerMethods
             else return favColor;
         }
 
-         static int Retire(int yearsToRetire)
-           {
-            string evenOrOdd = ""; 
+        static int Retire(int yearsToRetire)
+        {
+            string evenOrOdd = "";
             int age;
             Console.WriteLine("Please enter your age");
-               age = int.Parse(Console.ReadLine());
+            age = int.Parse(Console.ReadLine());
             Console.WriteLine(age);
             if (age % 2 == 0)
             {
@@ -106,7 +106,7 @@ namespace FortuneTellerMethods
                 yearsToRetire = 20;
                 Console.WriteLine("You can retire in " + yearsToRetire + " years.");
                 return yearsToRetire;
-                    
+
             }
             else
             {
@@ -114,44 +114,62 @@ namespace FortuneTellerMethods
                 yearsToRetire = 25;
                 Console.WriteLine("You can retire in " + yearsToRetire + " years.");
                 return yearsToRetire;
-                   
+
             }
         }
-         static void VacHome(int loc)
+        static void VacHome(int loc)
         {
+            
             string vacAt = "";
+            int numSibs = loc;
             switch (loc)
+
             {
                 case 0:
                     vacAt = "Brown's stadium";
+                    Console.WriteLine("You'll be vacationing at " + vacAt);
                     break;
-                   
+
 
                 case 1:
                     vacAt = "Sandusky";
+                    Console.WriteLine("You'll be vacationing at " + vacAt);
                     break;
 
                 case 2:
                     vacAt = "Miami Beach";
+                    Console.WriteLine("You'll be vacationing at " + vacAt);
                     break;
 
                 case 3:
                     vacAt = "Disney Land";
+                    Console.WriteLine("You'll be vacationing at " + vacAt);
                     break;
 
                 default:
-                    vacAt = "I guess you're staying home.";
+                    
+                    
+                    Console.WriteLine(numSibs);
+                    if (numSibs < 0)
+                    {
+                        vacAt = "rest room at Denny's";
+                        
+                    }
+                    else if (numSibs > 3)
+                    {
+                        vacAt = "Hilton Head";
+                        
+                    }
+
+                    Console.WriteLine("You'll be vacationing at " + vacAt);
                     break;
             }
 
-            Console.WriteLine("You'll be vacationing at " + vacAt);
-        }
 
 
-       
 
         }
 
 
     }
-
+}
