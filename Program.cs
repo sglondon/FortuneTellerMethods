@@ -6,7 +6,7 @@ namespace FortuneTellerMethods
     {
         static void Main(string[] args)
         {
-            //declare global variables
+            // variables  why aren't these global?
 
             string fName ="";
             string lName = "";
@@ -32,6 +32,7 @@ namespace FortuneTellerMethods
 
             //Console.WriteLine("Please enter your age");
             //age = int.Parse(Console.ReadLine());
+
             Retire(age);
 
 
@@ -40,15 +41,15 @@ namespace FortuneTellerMethods
             Console.WriteLine("Now please tell me how many siblings do you have");
             numSibs = int.Parse(Console.ReadLine());
 
+            VacHome(numSibs);
+
+
 
         }
         
 
-        
-
-       
-
-       
+             
+               
 
          static void Greet(string fName, string lName)
         {
@@ -94,7 +95,7 @@ namespace FortuneTellerMethods
 
          static int Retire(int yearsToRetire)
            {
-            string evenOrOdd = "";
+            string evenOrOdd = ""; 
             int age;
             Console.WriteLine("Please enter your age");
                age = int.Parse(Console.ReadLine());
@@ -116,8 +117,41 @@ namespace FortuneTellerMethods
                    
             }
         }
+         static void VacHome(int loc)
+        {
+            string vacAt = "";
+            switch (loc)
+            {
+                case 0:
+                    vacAt = "Brown's stadium";
+                    break;
+                   
 
+                case 1:
+                    vacAt = "Sandusky";
+                    break;
+
+                case 2:
+                    vacAt = "Miami Beach";
+                    break;
+
+                case 3:
+                    vacAt = "Disney Land";
+                    break;
+
+                default:
+                    vacAt = "I guess you're staying home.";
+                    break;
+            }
+
+            Console.WriteLine("You'll be vacationing at " + vacAt);
+        }
+
+
+       
+
+        }
 
 
     }
-}
+
